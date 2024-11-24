@@ -4,7 +4,8 @@
   "description": "A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads via the HTML5 File API that supports typescript.",
   "main": "resumablets.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,26 @@
   "bugs": {
     "url": "https://github.com/augustcodes08/resumable.ts/issues"
   },
-  "homepage": "https://github.com/augustcodes08/resumable.ts#readme"
+  "homepage": "https://github.com/augustcodes08/resumable.ts#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.15.0"
+  },
+  "lint-staged": {
+    "*.{css,html,js,json,markdown,md,sass,scss,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^19.6.0"
+  }
 }
