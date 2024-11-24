@@ -1,2 +1,5 @@
 # Example Files that need to be verified
 /samples
+
+# Mac Files
+.DS_Store
