@@ -5,7 +5,8 @@
   "main": "resumablets.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,11 @@
   "homepage": "https://github.com/augustcodes08/resumable.ts#readme",
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.15.0",
     "eslint": "^9.15.0",
     "globals": "^15.12.0",
+    "husky": "^9.1.7",
     "prettier": "^3.3.3",
     "typescript-eslint": "^8.15.0"
   },
@@ -39,8 +42,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "dependencies": {
-    "@commitlint/config-conventional": "^19.6.0"
   }
 }
