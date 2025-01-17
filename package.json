@@ -1,24 +1,47 @@
 {
-  "name": "resumablets",
+  "name": "resumable-uploads",
   "version": "0.1.0",
   "description": "A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads via the HTML5 File API that supports typescript.",
-  "main": "resumablets.js",
+  "main": "resumable-uploads.js",
+  "types": "./resumable-uploads.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit": "lint-staged",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/augustcodes08/resumable.ts.git"
+    "url": "git+https://github.com/augustcodes08/resumable-uploads"
   },
   "keywords": [
     "html5",
     "file",
     "upload"
   ],
-  "author": "https://github.com/augustcodes08/resumable.ts/graphs/contributors",
+  "author": "https://github.com/augustcodes08/resumable-uploads/graphs/contributors",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/augustcodes08/resumable.ts/issues"
+    "url": "https://github.com/augustcodes08/resumable-uploads/issues"
   },
-  "homepage": "https://github.com/augustcodes08/resumable.ts#readme"
+  "homepage": "https://github.com/augustcodes08/resumable-uploads#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.15.0"
+  },
+  "lint-staged": {
+    "*.{css,html,js,json,markdown,md,sass,scss,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
 }
