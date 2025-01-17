@@ -1,4 +1,4 @@
-import Resumable = require("./index");
+import Resumable from "./resumable-uploads.js";
 
 let resumable: Resumable = new Resumable({ chunkSize: 123 });
 let resumableNoOpts: Resumable = new Resumable();

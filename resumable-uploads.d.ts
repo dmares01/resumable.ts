@@ -1,7 +1,5 @@
-// Type definitions for Resumable.js v1.0.2
-// Project: https://github.com/23/resumable.js
-// Definitions by: Daniel McAssey <https://github.com/DanielMcAssey>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// Type definitions for Resumable-uploads v0.1.0
+// Project: https://github.com/augustcodes08/resumable-uploads
 
 declare namespace Resumable {
   interface ConfigurationHash {
@@ -112,7 +110,7 @@ declare namespace Resumable {
     /**
      * The minimum allowed file size. (Default: undefined)
      **/
-    minFileSize?: boolean;
+    minFileSize?: number;
     /**
      * A function which displays an error a selected file is smaller than allowed. (Default: displays an alert for every bad file.)
      **/
@@ -123,7 +121,7 @@ declare namespace Resumable {
     /**
      * The maximum allowed file size. (Default: undefined)
      **/
-    maxFileSize?: boolean;
+    maxFileSize?: number;
     /**
      * A function which displays an error a selected file is larger than allowed. (Default: displays an alert for every bad file.)
      **/
@@ -140,7 +138,7 @@ declare namespace Resumable {
      **/
     fileTypeErrorCallback?: (file: ResumableFile, errorCount: number) => void;
     /**
-     * The maximum number of retries for a chunk before the upload is failed. Valid values are any positive integer and undefined for no limit. (Default: undefined)
+     * The maximum number of retries for a chunk before the upload is failed. Valid values are any positive integer and undefined for no limit. (Default: 100)
      **/
     maxChunkRetries?: number;
     /**
@@ -387,8 +385,14 @@ declare namespace Resumable {
   }
 
   interface ResumableChunk {}
+
+  interface BackwardCompatibleDOMFile extends File {
+    readonly webkitRelativePath: string;
+    readonly relativePath: string;
+    readonly fileName: string;
+  }
 }
 
-declare module "resumablejs" {
+declare module "resumable-uploads" {
   export = Resumable;
 }
