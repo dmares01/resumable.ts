@@ -436,7 +436,7 @@
       var files = [],
         filesSkipped = [],
         remaining = fileList.length;
-      var decreaseReamining = function () {
+      var decreaseRemaining = function () {
         if (!--remaining) {
           // all files processed, trigger event
           if (!files.length && !filesSkipped.length) {
@@ -509,7 +509,7 @@
           } else {
             filesSkipped.push(file);
           }
-          decreaseReamining();
+          decreaseRemaining();
         }
         // directories have size == 0
         var uniqueIdentifier = $h.generateUniqueIdentifier(file, event);
@@ -523,7 +523,7 @@
             function () {
               // unique identifier generation failed
               // skip further processing, only decrease file count
-              decreaseReamining();
+              decreaseRemaining();
             },
           );
         } else {
