@@ -109,7 +109,7 @@ interface ConfigurationHash {
   /**
    * The minimum allowed file size. (Default: undefined)
    **/
-  minFileSize?: boolean;
+  minFileSize?: number;
   /**
    * A function which displays an error a selected file is smaller than allowed. (Default: displays an alert for every bad file.)
    **/
@@ -117,7 +117,7 @@ interface ConfigurationHash {
   /**
    * The maximum allowed file size. (Default: undefined)
    **/
-  maxFileSize?: boolean;
+  maxFileSize?: number;
   /**
    * A function which displays an error a selected file is larger than allowed. (Default: displays an alert for every bad file.)
    **/
